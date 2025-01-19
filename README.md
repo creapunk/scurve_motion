@@ -122,7 +122,8 @@ To perform these calculations, the single function `calc_dv_shift_t_s_a` is main
 To do so, a few steps are needed:
 1. **Compute velocity difference = |v<sub>init</sub> - v<sub>exit</sub>|**
 2. Calculate the case when the acceleration limit is effectively not present (the case of absence of a constant acceleration phase) and **estimate** the time needed in the jerk-up phase T_J<sub>INIT</sub> and jerk-down phase T_J<sub>EXIT</sub> from the condition that total velocity change sums to velocity difference
-   $$ t_{j_{\text{init}}} = \sqrt{\frac{2 \cdot \Delta v \cdot j_{\text{exit}}}{j_{\text{init}} \cdot (j_{\text{init}} + j_{\text{exit}})}},~~~
+   
+    $$ t_{j_{\text{init}}} = \sqrt{\frac{2 \cdot \Delta v \cdot j_{\text{exit}}}{j_{\text{init}} \cdot (j_{\text{init}} + j_{\text{exit}})}},~~~
    t_{j_{\text{exit}}} = \sqrt{\frac{2 \cdot \Delta v \cdot j_{\text{init}}}{j_{\text{exit}} \cdot (j_{\text{init}} + j_{\text{exit}})}} $$
 3. If the calculated peak acceleration exceeds `acc_lim`, the code clamps it to `acc_lim` and introduces a time `t_a_const` for the constant-acceleration phase.
 4. Integrate polynomials to find exact position and velocity at each sub-phase.
