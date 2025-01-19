@@ -1,0 +1,23 @@
+[package]
+name = "scurve_motion"
+version = "0.1.0"
+edition = "2021"
+authors = ["Anton Khrustalev"]
+description = "S-Curve motion planning library"
+license = "Apache-2.0"
+repository = "https://github.com/creapunk/scurve_motion"
+readme = "README.md"
+categories = ["science::robotics", "mathematics"]
+keywords = ["s-curve", "trajectory", "motion", "curve", "scurve"]
+
+[lib]
+name = "scurve_motion"
+path = "src/lib.rs"
+
+[[example]]
+name = "scurve_plot"
+path = "examples/scurve_plot.rs"
+
+[dependencies]
+[dev-dependencies]
+gnuplot = "0.0.44"
